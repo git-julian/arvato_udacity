@@ -41,6 +41,7 @@ The fils to run this notebook are the follwoing:
 * Udacity_AZDIAS_052018.csv - unlabeld dataset of the general popualtion
 * Udacity_CUSTOMERS_052018.csv - unlabeld dataset of the arvato customers
 * Udacity_MAILOUT_052018_TRAIN.csv - labeled data set for supervised model training
+* Udacity_MAILOUT_052018_TEST.csv - dataset to use the model on and participate on the Kaggle challenge
 
 * DIAS Attributes - Values 2017.xlsx - information about columns
 * DIAS Information Levels - Attributes 2017.xlsx - information about leves of the columns
@@ -67,14 +68,27 @@ Looking deeper into clusters 8 and 9 it can be seen that customers are rather we
 Conversly people in the gerneal poutation that are not likley to be customrs tend to have less money and more parsimonious.
 
 
+### 4. Predict response for the e-mail campaign
 
+For the classifcation task in a first approach RandomForrest, GradientBoostedTrees and XGBoost algorithem are testet without further optmization. 
 
-### 3. Indication on the 
+*  RandomForrest perfromed worst with a AUC of 62% on the cross-validation score. It also overfitted the data the most. 
+This however was a strong problem for all three alortihmes because of the highly inbalenced data. (Only 1.24% did Respond to the campaign.)
 
-## Discussion <a name="discussion"></a>
+* The best perfomring model was XGBoost with an AUC of 93% on the training-set and 78% on the cross-validation set. 
+
+Becaus of the inbalanced data the final training-set is rebalanced to a 33/66 proportin. This should avoid getting to much overfitting by the model wich can be seen in the learning-curves for the three models. 
+
+### 5. Predicting test data and 
+
+As a last stept the test data is scored with the trained model. 
+Then a csv file conisting of the LNR-IDs and the predicted score is created.
+After submitting the score to Kaggle a score of ca 0.69 is achieven. 
+
 
 
 ## Licensing, Authors, Acknowledgements <a name="licensing"></a>
 
 The used data comes from Arvato BERTELSMANN provided by Udacity within their Nanodegree and can be only used in this context. All the licensing for the data and other information can be found on [Udacity](https://www.udacity.com/course/data-scientist-nanodegree--nd025).
 
+[A blogpost to the work can be found here.](https://medium.com/@jbraun523_13616/know-your-customers-b9028c4edb8d)
