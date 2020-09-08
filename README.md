@@ -71,7 +71,7 @@ To load the Excel files with the given code they must be placed in the same dire
 
 ## Results <a name="results"></a>
 
-[A detailed description of the results can be find in my blogpost](https://medium.com/@jbraun523_13616/know-your-customers-b9028c4edb8d)
+[A detailed description of the results can be find in my blogpost.](https://medium.com/@jbraun523_13616/know-your-customers-b9028c4edb8d)
 
 
 ## Licensing, Authors, Acknowledgements <a name="licensing"></a>
